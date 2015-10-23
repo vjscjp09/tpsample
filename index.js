@@ -5,13 +5,13 @@
 
 var tropowebapi = require('./lib/tropo-webapi');
 var express = require('express');
+var app = express.createServer();
 
-var app = express();
 app.post('/', function(req, res){
 	// Create a new instance of the TropoWebAPI object.
 	var tropo = new tropowebapi.TropoWebAPI();
 	// Use the say method https://www.tropo.com/docs/webapi/say.htm
-	tropo.say("Shipped !, Welcome to my Tropo Web API node demo.");
+	tropo.say("Welcome to my Tropo Web API node demo.");
 	// Use the on method https://www.tropo.com/docs/webapi/on.htm
 	tropo.on("continue", null, "/one", true);
 	
